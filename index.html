@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>isucutie</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #ffc0cb, #ffe4e1);
+      text-align: center;
+      padding: 40px;
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 30px;
+    }
+
+    button {
+      padding: 15px 25px;
+      margin: 10px;
+      font-size: 1.1rem;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      background-color: #ff69b4;
+      color: white;
+      transition: transform 0.2s;
+    }
+
+    button:hover {
+      transform: scale(1.05);
+    }
+
+    #content {
+      margin-top: 30px;
+    }
+
+    img {
+      max-width: 300px;
+      border-radius: 15px;
+      margin-top: 20px;
+    }
+
+    .flash {
+      animation: flash 0.3s infinite alternate;
+    }
+
+    @keyframes flash {
+      from { opacity: 1; }
+      to { opacity: 0.3; }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>isucutie</h1>
+
+  <button onclick="showMotivation()">for motivation</button>
+  <button onclick="quiz()">quiz</button>
+  <button onclick="showCute()">cute</button>
+
+  <div id="content"></div>
+
+  <script>
+    function showMotivation() {
+      document.getElementById("content").innerHTML = `
+        <h2>You got this 💪</h2>
+        <img src="face.jpg" alt="My Face">
+      `;
+    }
+
+    function quiz() {
+      let answer = confirm("Will you be my Valentine? 💌");
+      if (answer) {
+        document.getElementById("content").innerHTML =
+          "<h2>YAY 💖 You made my day!</h2>";
+      } else {
+        document.getElementById("content").innerHTML =
+          "<h2>Still cute anyway 😌</h2>";
+      }
+    }
+
+    function showCute() {
+      document.getElementById("content").innerHTML = `
+        <img src="cat.gif" class="flash" alt="Cute Cat">
+      `;
+    }
+  </script>
+
+</body>
+</html>
